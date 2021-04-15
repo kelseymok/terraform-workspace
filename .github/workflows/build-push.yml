@@ -18,5 +18,3 @@ jobs:
         with:
           push: true
           tags: terraform-workspace:latest
-          tag_with_sha: true
-          tag_with_ref: true
