@@ -12,9 +12,13 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-      - name: Build, Tag, Push
-        uses: mattdavis0351/actions/docker-gpr@v1
+        uses: actions/checkout@v2
+      - name: Build container image
+        uses: docker/build-push-action@v1
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          image-name: terraform-workspace
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: ${{ github.repository }}/octo-image
+          tag_with_sha: true
+          tag_with_ref: true
