@@ -15,7 +15,7 @@ jobs:
       - name: Login to GitHub Packages Docker Registry
         uses: docker/login-action@v1
         with:
-          registry: docker.pkg.github.com
+          registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build container image
@@ -23,8 +23,8 @@ jobs:
         with:
           push: true
           tags: |
-            terraform-workspace:0.14.1
-            terraform-workspace:latest
+            ghcr.io/kelseymok/terraform-workspace:0.14.1
+            ghcr.io/kelseymok/terraform-workspace:latest
           github-token: ${{ secrets.GITHUB_TOKEN }}
           build-args: |
             TERRAFORM_VERSION=0.14.1
