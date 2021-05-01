@@ -13,7 +13,7 @@ RUN apk add --no-cache \
 RUN mkdir /root/.aws
 
 ## Install Pip Packages
-RUN pip3 install --upgrade awscli wheel
+RUN pip3 install --upgrade awscli wheel pytest
 
 ## Install Terraform
 ARG TERRAFORM_VERSION=0.14.10
