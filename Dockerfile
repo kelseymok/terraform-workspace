@@ -1,14 +1,17 @@
 FROM python:3-alpine
 WORKDIR /
 
-RUN apk add --no-cache \
+RUN apk update && apk add --no-cache \
   bash \
   curl \
   git \
   jq \
   openssh \
   make \
-  zip
+  zip \
+  gcc \
+  g++ \
+  python3-dev
 
 RUN mkdir /root/.aws
 
