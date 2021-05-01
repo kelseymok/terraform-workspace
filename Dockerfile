@@ -8,15 +8,12 @@ RUN apk update && apk add --no-cache \
   jq \
   openssh \
   make \
-  zip \
-  gcc \
-  g++ \
-  python3-dev
+  zip
 
 RUN mkdir /root/.aws
 
 ## Install Pip Packages
-RUN pip3 install --upgrade awscli wheel pytest pytest_mock pyspark pandas
+RUN pip3 install --upgrade awscli wheel
 
 ## Install Terraform
 ARG TERRAFORM_VERSION=0.14.10
