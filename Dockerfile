@@ -8,7 +8,8 @@ RUN apk update && apk add --no-cache \
   jq \
   openssh \
   make \
-  zip
+  zip \
+  ca-certificates
 
 RUN mkdir /root/.aws
 
